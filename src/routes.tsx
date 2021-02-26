@@ -8,6 +8,8 @@ import { Feather } from "@expo/vector-icons";
 import Header from './components/Header';
 import Home from './screens/Home';
 import Accenture from './screens/Accenture';
+import Contact from './screens/Contact';
+import AsyncStorageComponent from './screens/AsyncStorage';
 
 const { Navigator, Screen } = createStackNavigator();
 export default function Route() {
@@ -27,6 +29,22 @@ export default function Route() {
                     options={{
                         headerShown: true,
                         header: () => <Header showCancel={false} title="Accenture" />
+                    }}
+                />
+                <Screen
+                    name="contact"
+                    component={Contact}
+                    options={{
+                        headerShown: true,
+                        header: () => <Header showCancel={true} title="Contato" />
+                    }}
+                />
+                <Screen
+                    name="storage"
+                    component={AsyncStorageComponent}
+                    options={{
+                        headerShown: true,
+                        header: () => <Header showCancel={true} title="Storage" />
                     }}
                 />
             </Navigator>
